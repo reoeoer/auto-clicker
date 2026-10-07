@@ -1,0 +1,33 @@
+==================================================
+  自动点击器 - 打包说明
+==================================================
+
+【打包成独立 exe】
+1. 双击运行 build_exe.bat
+2. 等待打包完成（第一次会自动安装 PyInstaller）
+3. 打包好的文件在 dist\AutoClicker.exe
+4. 这个 exe 可以直接在其他 Windows 电脑上运行，不需要装 Python
+
+【制作安装包（带安装向导+卸载）】
+1. 先完成上面的 exe 打包
+2. 下载安装 Inno Setup（免费）:
+   https://jrsoftware.org/isdl.php
+3. 安装后双击运行 build_installer.bat
+4. 安装包生成在 Output\AutoClicker-Setup.exe
+5. 这个安装包可以拷到其他电脑上双击安装
+6. 支持开始菜单、桌面快捷方式、卸载程序
+
+【文件说明】
+auto_clicker.py     - 程序源代码
+auto_clicker.spec   - PyInstaller 打包配置
+build_exe.bat       - 一键打包成 exe
+installer.iss       - Inno Setup 安装包脚本
+build_installer.bat - 一键制作安装包
+启动自动点击器.bat  - 直接运行源码的启动脚本
+requirements.txt    - Python 依赖
+打包说明.txt        - 本文件
+
+【注意】
+- 打包后的 exe 只支持 Windows
+- 32位/64位取决于打包时用的 Python 版本
+- 如果需要更小的体积，可以下载 UPX 放到 PATH 里
